@@ -4,7 +4,7 @@
 # this isn't how codeowners rules work pls read the first comment instead of trying to force a sorting order
 
 # taydeo
-/Content.*/_Funkystation/ @taydeo
+/Content.*/_Funkystation/
 
 # maps
 /Resources/Maps/

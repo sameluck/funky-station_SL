@@ -583,3 +583,86 @@
 #    - id: BasicDecalDirtMonospaceVariationPass
 #      prob: 0.50
 #      orGroup: monospaceDecals
+
+
+
+
+### ### ### ### ###
+
+
+- type: entityTable
+  id: NewPathBasicGameRulesTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+      - !type:NestedSelector
+        tableId: NewPathBasicCalmEventsTable
+      - !type:NestedSelector
+        tableId: NewPathBasicAntagEventsTable
+      - !type:NestedSelector
+        tableId: CargoGiftsTable
+      - !type:NestedSelector
+        tableId: CalmPestEventsTable
+      - !type:NestedSelector
+        tableId: SpicyPestEventsTable
+        
+        
+- type: entityTable
+  id: NewPathBasicGameRulesTableNoAntag
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+      - !type:NestedSelector
+        tableId: NewPathBasicCalmEventsTable
+      - !type:NestedSelector
+        tableId: CargoGiftsTable
+      - !type:NestedSelector
+        tableId: CalmPestEventsTable
+      - !type:NestedSelector
+        tableId: SpicyPestEventsTable
+
+
+- type: entity
+  id: NewPathBasicStationEventScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: NewPathBasicGameRulesTable
+
+
+- type: entity
+  id: NewPathBasicStationEventSchedulerNoAntag
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: NewPathBasicGameRulesTableNoAntag
+
+
+- type: entity
+  id: NewPathBasicRoundstartVariation
+  parent: BaseGameRule
+  components:
+  - type: RoundstartStationVariationRule
+    rules:
+    - id: BasicPoweredLightVariationPass
+    - id: BasicTrashVariationPass
+    - id: SolidWallRustingVariationPass
+    - id: ReinforcedWallRustingVariationPass
+    - id: BasicPuddleMessVariationPass
+      prob: 0.99
+      orGroup: puddleMess
+    - id: BloodbathPuddleMessVariationPass
+      prob: 0.01
+      orGroup: puddleMess
+    - id: SmugglerStashVariationPass
+      prob: 0.90
+    #- id: CutWireVariationPass # funkystation
+    #  prob: 0.20 # would suck if it happened every single round, but it's something for engi to be vigilant of
+#    - id: BasicDecalDirtVariationPass
+#    - id: BasicDecalGraffitiVariationPass
+#    - id: BasicDecalBrunsVariationPass
+#      prob: 0.50
+#      orGroup: monospaceDecals
+#    - id: BasicDecalDirtMonospaceVariationPass
+#      prob: 0.50
+#      orGroup: monospaceDecals

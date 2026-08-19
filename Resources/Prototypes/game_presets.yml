@@ -160,6 +160,43 @@
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
+
+
+### ### ### ### ###
+- type: gamePreset
+  id: GayBabyJail
+  alias:
+  - events_no_traitor
+  name: gaybabyjail-title
+  showInVote: true #2boring2vote
+  description: gaybabyjail-description
+  rules:
+  - NewPathBasicStationEventSchedulerNoAntag
+  - SpaceTrafficControlFriendlyEventScheduler
+  - NewPathBasicRoundstartVariation
+  
+  
+- type: gamePreset
+  id: SabotageGalore
+  alias:
+  - events_with_traitor
+  name: sabotagegalore-title
+  showInVote: true #2boring2vote
+  description: sabotagegalore-description
+  rules:
+  - Wizard
+  - DummyNonAntagChance
+  - CosmicCult
+  - Traitor
+  - Revolutionary  
+  - SubGamemodesRule
+  - NewPathBasicStationEventScheduler
+  - SpaceTrafficControlEventScheduler
+  - NewPathBasicRoundstartVariation
+### ### ### ### ###
+
+
+
 - type: gamePreset
   id: Greenshift
   alias:

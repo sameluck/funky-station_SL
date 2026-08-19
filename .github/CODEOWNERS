@@ -7,16 +7,16 @@
 /Content.*/_Funkystation/ @taydeo
 
 # maps
-/Resources/Maps/ @willowzeta
+/Resources/Maps/
 
 # audio
-/Resources/Audio/ @vectorassembly
+/Resources/Audio/
 
 # textures
-/Resources/Textures/ @Teasq
+/Resources/Textures/
 
 # rules
-/Resources/ServerInfo/ @salpphie @Huhm-1
+/Resources/ServerInfo/
 
 # github
-/.github/ @taydeo @Komonighub
+/.github/ @mrsasha8

@@ -4,19 +4,19 @@
 # this isn't how codeowners rules work pls read the first comment instead of trying to force a sorting order
 
 # taydeo
-/Content.*/_Funkystation/ @taydeo
+/Content.*/_Funkystation/
 
 # maps
-/Resources/Maps/ @willowzeta
+/Resources/Maps/
 
 # audio
-/Resources/Audio/ @vectorassembly
+/Resources/Audio/
 
 # textures
-/Resources/Textures/ @Teasq
+/Resources/Textures/
 
 # rules
-/Resources/ServerInfo/ @salpphie @Huhm-1
+/Resources/ServerInfo/
 
 # github
-/.github/ @taydeo @Komonighub
+/.github/ @mrsasha8

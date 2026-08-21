@@ -856,3 +856,100 @@
     - SecurityClown
     - PartyMaker
     - CommandMaid
+
+
+
+### ### ### ### ### ###
+
+- type: entityTable
+  id: NewPathBasicCalmEventsTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+    - id: NewPathAnomalySpawn
+    - id: BluespaceArtifact
+    - id: BluespaceLocker
+    - id: BreakerFlip
+    - id: BureaucraticError
+    - id: ClericalError
+    - id: CockroachMigration
+    - id: GasLeak
+    - id: GreytideVirus
+    - id: NewPathIonStorm # its calm like 90% of the time smh
+    - id: JobDistributionError
+    - id: NewPathKudzuGrowth
+    - id: MassHallucinations
+    - id: MimicVendorRule
+    - id: MouseMigration
+    - id: PowerGridCheck
+    - id: RandomSentience
+    - id: SlimesSpawn
+    - id: SolarFlare
+    - id: SnakeSpawn
+    - id: SpiderClownSpawn
+    - id: SpiderSpawn
+    - id: HonkbotSpawn
+#   - id: VentClog
+    - id: MalignRiftSpawn # Funky
+
+- type: entityTable
+  id: NewPathBasicAntagEventsTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+    - id: ClosetSkeleton
+    - id: DragonSpawn
+    - id: KingRatMigration
+    - id: NinjaSpawn
+    - id: ParadoxCloneSpawn
+    - id: RevenantSpawn
+    - id: SleeperAgents
+#    - id: ZombieOutbreak - funky
+    - id: LoneOpsSpawn
+    - id: BlobSpawn #Goobstation - Blob
+    - id: FalseAlarm
+    - id: DerelictCyborgSpawn
+    - id: WizardSpawn
+    - id: ColossusSpawn # Funky
+
+
+- type: entity
+  id: NewPathAnomalySpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncementColor: "#18abf5"
+    startAudio:
+      path: /Audio/Announcements/announce.ogg
+    weight: 8
+    duration: 35
+    chaos: # Goobstation
+      Anomaly: 100
+  - type: AnomalySpawnRule
+
+
+- type: entity
+  id: NewPathKudzuGrowth
+  parent: BaseStationEventLongDelay
+  components:
+  - type: StationEvent
+    earliestStart: 15
+    minimumPlayers: 15
+    weight: 4
+    duration: 600 #if they can't deal with it in 10 minutes that's their problem
+    chaos:
+      Hostile: 20
+      Friend: 20
+      Medical: 100
+  - type: KudzuGrowthRule
+
+
+- type: entity
+  parent: BaseGameRule
+  id: NewPathIonStorm
+  components:
+  - type: StationEvent
+    weight: 16
+    reoccurrenceDelay: 20
+    duration: 1
+  - type: IonStormRule
+
+
